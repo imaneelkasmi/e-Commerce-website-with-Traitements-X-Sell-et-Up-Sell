@@ -1,0 +1,136 @@
+
+            <div class="box">
+              <h1>My account</h1>
+              <p class="lead">Change your personal details or your password here.</p>
+              <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+              <h3 class="mt-5">Add Category</h3>
+              <form [formGroup]="addCtegoryForm" (ngSubmit)="addCtegory()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="firstname">Name</label>
+                      <input id="firstname" type="text" class="form-control"  formControlName="lable" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="country">subcategory of</label>
+                      <select id="country" class="form-control" formControlName="parent_id" required>
+                        <option value="0" selected>none</option>
+                      <option *ngFor="let Cate of allCategories" value="{{Cate.id}}">{{Cate.lable}}</option>
+                      
+                      
+                    </select>
+                    </div>
+                </div>
+                  <!-- <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="lastname">sub category of</label>
+                      <input id="lastname" type="text" class="form-control"  formControlName="parent_id" required>
+                    </div>
+                  </div> -->
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Categore</button>
+                </div>
+              </form>
+              
+              <h3 class="mt-5">Add Produit</h3>
+              <form [formGroup]="addProduitForm" (ngSubmit)="addProduit()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="firstname">Name</label>
+                      <input id="firstname" type="text" class="form-control"  formControlName="name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="lastname">Keyword</label>
+                      <input id="lastname" type="text" class="form-control"  formControlName="keyword" required>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.row-->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="company">Marque</label>
+                      <input id="company" type="text" class="form-control" formControlName="marque" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="street">AVAILABLE QUANTITY</label>
+                      <input id="street" type="number" class="form-control" formControlName="stock" required>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.row-->
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="form-group">
+                      <label for="city">price</label>
+                      <input id="city" type="number" class="form-control" formControlName="price" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="country">Categore</label>
+                      <select id="country" class="form-control" formControlName="Categore_id" required>
+                       <!--  <option value="0" selected>none</option> -->
+                      <option *ngFor="let Cate of allCategories2" value="{{Cate.id}}">{{Cate.lable}}</option>
+                      
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                  <h3 class="mt-5">images of Produit</h3>
+
+                </div>
+                <div class="col-md-6 ">
+                  <div class="form-group">
+                    <label for="city">image home page</label>
+                    <input id="city" type="file" class="form-control" formControlName="image1" required>
+                  </div>
+                </div>
+                
+                <div class="col-md-3 ">
+                  <div class="form-group">
+                    <label for="city">alt</label>
+                    <input id="city" type="text" class="form-control" formControlName="alt1" required>
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="form-group">
+                    <label for="city">image hover page</label>
+                    <input id="city" type="file" class="form-control" formControlName="image2" required>
+                  </div>
+                </div>
+                <div class="col-md-3 ">
+                  <div class="form-group">
+                    <label for="city">alt</label>
+                    <input id="city" type="text" class="form-control" formControlName="alt2" required>
+                  </div>
+                </div>
+                <div class="col-md-6 ">
+                  <div class="form-group">
+                    <label for="city">image interface produit</label>
+                    <input id="city" type="file" class="form-control" formControlName="image3" required>
+                  </div>
+                </div>
+                <div class="col-md-3 ">
+                  <div class="form-group">
+                    <label for="city">alt</label>
+                    <input id="city" type="text" class="form-control" formControlName="alt3" required>
+                  </div>
+                </div>
+                
+                  
+                  <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Produit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+

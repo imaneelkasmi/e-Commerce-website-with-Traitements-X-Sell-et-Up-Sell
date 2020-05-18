@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div id="all">
+    <div id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- breadcrumb-->
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li aria-current="page" class="breadcrumb-item active">Ladies </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <app-side-bar-cate></app-side-bar-cate>
+            
+          </div>
+          <div class="col-lg-9">
+            <app-body-category [_idCate]="_idCate"></app-body-category>
+          </div>
+          <!-- /.col-lg-9-->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- <app-body-category></app-body-category> -->
+<app-footer></app-footer>
