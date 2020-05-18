@@ -10,6 +10,5 @@ public interface ICategorieSRV {
 	public Optional<Categorie> selectByIdCategorie(int id);
 	public List<Categorie> selectAllCategorie();
 	public void deleteCategorie(int id);
-	public List<Categorie> getAllParents();
 
 }

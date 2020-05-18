@@ -3,7 +3,6 @@ package com.youcode.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +25,6 @@ public class CategorieCTR {
 // Add 
 	@PostMapping(value = "/categorie")
 	private void addOrUpdateCategorie( @RequestBody Categorie category) {
-		System.out.println(category);
 		categorieSRV.addOrUpdateCategorie(category);
 	}
 //Update 
@@ -36,8 +34,8 @@ public class CategorieCTR {
 	}
 //Select All
 	@GetMapping(value = "/public/categorie")
-	public ResponseEntity<List<Categorie>> selectAllCategorie() {
-		return ResponseEntity.ok(categorieSRV.selectAllCategorie());
+	public List<Categorie> selectAllCategorie() {
+		return categorieSRV.selectAllCategorie();
 	}
 //Select By Id
 	@GetMapping(value = "/public/categorie/{id}")
@@ -48,10 +46,6 @@ public class CategorieCTR {
 	@DeleteMapping( value = "/categorie/{id}")
 	private void deleteCategorie(@PathVariable("id") int id) {
 		categorieSRV.deleteCategorie(id);
-	}
-	@GetMapping("/parentcategorie")
-	public ResponseEntity<List<Categorie>> getAll(){
-		return ResponseEntity.ok(categorieSRV.getAllParents());
 	}
 
 

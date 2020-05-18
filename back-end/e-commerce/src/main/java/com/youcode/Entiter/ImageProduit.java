@@ -8,7 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -21,7 +20,7 @@ public class ImageProduit {
 	private String lable ;
 	private String alt ;
 // relationship with prouduit
-	@JsonBackReference
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="pruduit_id", nullable = false)
 	private Produit pruduit;

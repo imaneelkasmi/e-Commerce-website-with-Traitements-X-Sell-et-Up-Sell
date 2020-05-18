@@ -20,9 +20,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 
@@ -53,11 +51,10 @@ public class Produit {
 // relationship with categorie
 	@ManyToOne
 	@JoinColumn(name="categorie_id", nullable = false)
-	@JsonBackReference
+	@JsonIgnore
 	private Categorie category;
 // relationship with ImageProduit
 	@OneToMany(mappedBy ="pruduit")
-	@JsonManagedReference
 	private List<ImageProduit> listeImage;
 
 // relationship with Promotion

@@ -27,8 +27,5 @@ public class CategorieSRV implements ICategorieSRV{
 	public void deleteCategorie(int id) {
 		categorieDAO.deleteById(id);
 	}
-	public List<Categorie> getAllParents(){
-		return categorieDAO.findByParentIsNull();
-	}
 
 }

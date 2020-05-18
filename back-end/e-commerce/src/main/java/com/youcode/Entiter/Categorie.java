@@ -13,10 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 
@@ -29,21 +27,18 @@ public class Categorie {
 	private int categorie_id ;
 	private String lable ;
 // relationship with Produit
-	@JsonManagedReference
 	@OneToMany(mappedBy ="category")
 	private List<Produit> listProduit ;
 	
 //Recursive relationship with Categorie
 	
 	@OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
-	 @JsonManagedReference
+	
     private List<Categorie> Child;
     
     @ManyToOne
     @JoinColumn(referencedColumnName = "categorie_id")
-    @JsonBackReference
-//    @JsonIgnore
-//    @JsonIgnoreProperties(value={"parent" }, allowSetters= true,allowGetters= true)
+    @JsonIgnore
     private Categorie parent;
     
     
@@ -52,10 +47,10 @@ public class Categorie {
 		super();
 	}
 
-	public Categorie(int id, String lable, List<Produit> listProduit, List<Categorie> child, Categorie parent) {
+	public Categorie(int id, String label, List<Produit> listProduit, List<Categorie> child, Categorie parent) {
 		super();
 		this.categorie_id = id;
-		this.lable = lable;
+		this.lable = label;
 		this.listProduit = listProduit;
 		Child = child;
 		this.parent = parent;
@@ -69,12 +64,12 @@ public class Categorie {
 		this.categorie_id = id;
 	}
 
-	public String getlable() {
+	public String getLabel() {
 		return lable;
 	}
 
-	public void setlable(String lable) {
-		this.lable = lable;
+	public void setLabel(String label) {
+		this.lable = label;
 	}
 
 	public List<Produit> getListProduit() {
@@ -103,7 +98,7 @@ public class Categorie {
 
 	@Override
 	public String toString() {
-		return "Categorie [id=" + categorie_id + ", lable=" + lable + ", listProduit=" + listProduit + ", Child=" + Child
+		return "Categorie [id=" + categorie_id + ", label=" + lable + ", listProduit=" + listProduit + ", Child=" + Child
 				+ ", parent=" + parent + "]";
 	}
     

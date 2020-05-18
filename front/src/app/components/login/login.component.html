@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6 d-flex mx-auto flex-column">
+        <form [formGroup]="loginForm" (ngSubmit)="getLogin()" >
+          <div class="form-group">
+            <label for="email">username</label>
+            <input class="form-control" id="email" type="text"  formControlName="username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" id="password" type="password"  formControlName="password" required>
+          </div>
+          <div class="d-flex flex-column align-items-center justify-content-around">
+            <button class="btn btn-primary btn-sm btn-block" >Login</button>
+            <hr>
+            <h4 class="text-uppercase"><strong>Login Using</strong></h4>
+
+            <button type="submit"  class="btn btn-danger btn-sm btn-block mt-4">
+            <span><i class="fa fa-google"></i> Google </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
